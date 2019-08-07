@@ -2,33 +2,30 @@ console.log('App server is up and running!')
 
 // JSX - Javascrip XML
 
-var appObj = {
+const app = {
     title: "This is the Bloody Title!",
     subtitle: "Yes, swearing is clever",
     options: ['One', 'Two']
 };
 
 
-var template = (
+const template = (
     <div>
-        <h1>{appObj.title}</h1>
-        {appObj.subtitle && <p>{appObj.subtitle}</p>}
-        <p>{appObj.options.length > 0 ? 'Here are your options' : 'There are no options'}</p>
+        <h1>{app.title}</h1>
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'There are no options'}</p>
         <ol>
             <li>Option the first: </li>
             <li>Option the next: </li>
         </ol>
     </div>
 );
-var user = {
+const user = {
     name: 'Simpson',
     age: 60,
     location: 'Kitchens',
     
 }
-var userName = "Mike";
-var userAge = 27;
-var userLocation = "Kitchens";
 
 function getLocation(location) {
     if (location) {
@@ -36,13 +33,13 @@ function getLocation(location) {
     } 
 }
 
-var templateTwo = (
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name : 'Anonymousey'}</h1>
         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
         {getLocation(user.location)}
     </div>
 );
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, app);
+ReactDOM.render(template, appRoot);
