@@ -1,33 +1,99 @@
-'use strict';
+"use strict";
 
-var add = function add(a, b) {
-    return a + b;
+console.log('App server is up and running!');
+
+// JSX - Javascrip XML
+
+var app = {
+    title: "This is the Bloody Title!",
+    subtitle: "Yes, swearing is cleversos",
+    options: ['One', 'Two']
 };
 
-console.log(add(40, 62));
+var template = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        "p",
+        null,
+        app.subtitle
+    ),
+    React.createElement(
+        "p",
+        null,
+        app.options.length > 0 ? 'Here are your options' : 'There are no options'
+    ),
+    React.createElement(
+        "ol",
+        null,
+        React.createElement(
+            "li",
+            null,
+            "Option the first: "
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Option the next: "
+        )
+    )
+);
+// const user = {
+//     name: 'Simpson',
+//     age: 60,
+//     location: 'Kitchens',
+//
+// }
+//
+// function getLocation(location) {
+//     if (location) {
+//         return <p>Location: {location}</p>;
+//     }
+// }
 
-var user = {
-    name: 'finlay',
-    cities: ['edinburgh', 'aberdeen', 'jersey', 'london', 'letchworth'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
 
-        return this.cities.map(function (city) {
-            return _this.name + ' has lived ' + city;
-        });
-    }
+var count = 0;
+var addOne = function addOne() {
+    console.log('addOne');
 };
-console.log(user.printPlacesLived());
-
-var multiplier = {
-    number: 9,
-    multipliedBy: [4, 5, 6, 7, 8, 9],
-    multiply: function multiply() {
-        var _this2 = this;
-
-        return this.multipliedBy.map(function (sums) {
-            return _this2.number * sums;
-        });
-    }
+var minusOne = function minusOne() {
+    console.log('minusOne');
 };
-console.log(multiplier.multiply());
+var reset = function reset() {
+    console.log('reset');
+};
+
+var templateTwo = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        "Count: ",
+        count
+    ),
+    React.createElement(
+        "button",
+        { onClick: addOne },
+        "+1"
+    ),
+    React.createElement(
+        "button",
+        { onClick: minusOne },
+        "-1"
+    ),
+    React.createElement(
+        "button",
+        { onClick: reset },
+        "reset"
+    )
+);
+
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);
