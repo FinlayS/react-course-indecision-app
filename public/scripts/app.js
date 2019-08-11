@@ -1,34 +1,33 @@
 'use strict';
 
-function square(x) {
-    return x * x;
+var add = function add(a, b) {
+    return a + b;
 };
 
-console.log(square(8));
+console.log(add(40, 62));
 
-// const squareArrow = (x) => {
-//     return  x * x;
-// }
+var user = {
+    name: 'finlay',
+    cities: ['edinburgh', 'aberdeen', 'jersey', 'london', 'letchworth'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
 
-var squareArrow = function squareArrow(x) {
-    return x * x;
+        return this.cities.map(function (city) {
+            return _this.name + ' has lived ' + city;
+        });
+    }
 };
+console.log(user.printPlacesLived());
 
-console.log(squareArrow(9));
+var multiplier = {
+    number: 9,
+    multipliedBy: [4, 5, 6, 7, 8, 9],
+    multiply: function multiply() {
+        var _this2 = this;
 
-var getFirstName = function getFirstName(name) {
-    return firstName = name.split(' ')[0];
-    console.log(firstName);
+        return this.multipliedBy.map(function (sums) {
+            return _this2.number * sums;
+        });
+    }
 };
-
-getFirstName('FinlayFirst SimpsonLast');
-
-var getShortLastName = function getShortLastName(name) {
-    return console.log(name.split(' ')[1]);
-};
-getShortLastName('FinlayFirst SimpsonLast');
-
-var getShorterLastName = function getShorterLastName(name) {
-    return name.split(' ')[1];
-};
-console.log(getShorterLastName('FIRST LAST'));
+console.log(multiplier.multiply());

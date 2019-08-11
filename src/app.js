@@ -4,7 +4,7 @@ console.log('App server is up and running!')
 
 const app = {
     title: "This is the Bloody Title!",
-    subtitle: "Yes, swearing is clever",
+    subtitle: "Yes, swearing is cleverss",
     options: ['One', 'Two']
 };
 
