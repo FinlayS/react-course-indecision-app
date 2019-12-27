@@ -21,4 +21,4 @@ const renderToggle = () => {
 };
 
 const appRoot = document.getElementById('app');
-renderToggle(); 
+renderToggle();
