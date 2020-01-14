@@ -15,6 +15,12 @@
   opacity: .5;
 }
 
+@media (min-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $xl-size;
+  }
+}
+
 // Button
 .button {
   background: $purple;
@@ -30,19 +36,4 @@
   border: none;
   color: $off-white;
   padding: 0;
-}
-
-
-@media (min-width: $desktop-breakpoint) {
-  .add-option {
-    flex-direction: row;
-  }
-
-  .add-option__input {
-    margin: 0 $s-size 0 0;
-  }
-
-  .big-button {
-    margin-bottom: $xl-size;
-  }
 }
